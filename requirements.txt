@@ -1,0 +1,12 @@
+bs4
+openpyxl
+urllib3
+pandas
+transformers[torch]
+tokenizers
+datasets
+evaluate
+rouge_score
+sentencepiece
+huggingface_hub
+# --upgrade
