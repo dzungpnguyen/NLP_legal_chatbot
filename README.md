@@ -38,6 +38,6 @@ pip install -r requirements.txt
 ### 2. Run Chat Bot
 Go to the folder `rule_based_chatbot`and run `SimilarityChatBot_v2.py` file.
 ```
-python MLChatBot.py
+python SimilarityChatBot_v2.py
 ```
 Type `exit` to stop the program.
