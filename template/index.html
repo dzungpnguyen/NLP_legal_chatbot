@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+    <button onclick="createConversation()">Create New Conversation</button>
+    <select id="conversationSelect" onchange="loadConversation(this.value)">
+        <!-- Les options seront ajoutées dynamiquement -->
+    </select>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Type your message here...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
