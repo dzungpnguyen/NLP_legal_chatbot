@@ -22,8 +22,30 @@ var conversations = []; // Stocke les conversations
             var chatbox = document.getElementById('chatbox');
             var selectedConversation = document.getElementById('conversationSelect').value;
             var message = 'User: ' + input.value;
-            chatbox.innerHTML += message + '<br>';
-            conversations[selectedConversation].messages.push(message);
-            input.value = '';
-            // Ici, vous pouvez ajouter le code pour envoyer le message à votre chatbot et afficher la réponse
+            console.log(message);
+            fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    text: message
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                console.log(typeof data)
+                var botMessage = 'Bot: ' + data.response;
+                chatbox.innerHTML += message + '<br>';
+                chatbox.innerHTML += botMessage + '<br>';
+                conversations[selectedConversation].messages.push(message);
+                conversations[selectedConversation].messages.push(botMessage);
+            })
+            .catch((error) => {
+                console.log('Error:', error);
+                console.error('Error:', error);
+            });
+            
+            
         }
