@@ -1,0 +1,19 @@
+# Ignore les fichiers et dossiers générés par l'environnement de développement
+/node_modules
+/.vscode
+/.idea
+
+# Ignore les fichiers de build
+/build
+/dist
+
+# Ignore les fichiers de configuration spécifiques à l'environnement
+.env
+.venv
+# Ignore les fichiers de logs
+/log
+
+# Ignore les fichiers de sauvegarde
+*.bak
+*.swp
+*.tmp
