@@ -4,25 +4,46 @@
     <title>Chatbot</title>
     <link rel="stylesheet" type="text/css" href="static/style.css">
 </head>
-<body>
-    <h1>Projet Chatbot</h1>
-    <button onclick="createConversation()">Create New Conversation</button>
-    <select id="conversationSelect" onchange="loadConversation(this.value)">
-        <!-- Les options seront ajoutées dynamiquement -->
-    </select>
-    <div id="chatbox"></div>
-    <input type="text" id="userInput" placeholder="Type your message here...">
-    <button onclick="sendMessage()">Send</button>
+<body onload="createConversation()">
+    <div id="Title" class="pt-1">
+        <h1 class="title is-3">Hi, I am your legal advice assistant. How can I help you ?</h1>
+    </div>
+
+    <div id="conversations" class="mt-1">
+        <button class="button is-link" onclick="createConversation()">Create New Conversation</button>
+        <div class="select">
+            <select id="conversationSelect" onchange="loadConversation(this.value)">
+            <!-- Les options seront ajoutées dynamiquement -->
+            </select>
+        </div>
+
+    </div>
+
+    <div id="chatbox" class="box mt-2"></div>
+
+    <div id="input" class="columns is-vcentered">
+        <div class="column">
+            <input type="text" id="userInput" class="input" onkeydown="handleKeyPress(event)" placeholder="Type your message here...">
+        </div>
+        <div class="column mt-3">
+            <button id="submit-input" class="button is-link" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
 
     <div class="members">
-        <h2>Membres du projet</h2>
-        <p>Phuong Dung NGUYEN</p>
-        <p>Adam LOUAFI</p>
-        <p>Arnaud RAFALIMANANA--CHAN PENG</p>
-        <p> Maël GUEGUEN</p>
-        <p>Nathan PROVOST</p>
-        <p>Zachary Akakpo</p>
-        <p>Théo MARTIN</p>
+        <div class="has-text-centered">
+            <h2 class="title">Membres du projet</h2>
+        </div>
+        <div id="members" class="columns mt-1">
+            <p class="column">Phuong Dung NGUYEN</p>
+            <p class="column">Adam LOUAFI</p>
+            <p class="column">Arnaud RAFALIMANANA--CHAN PENG</p>
+            <p class="column">Maël GUEGUEN</p>
+            <p class="column">Nathan PROVOST</p>
+            <p class="column">Zachary Akakpo</p>
+            <p class="column">Théo MARTIN</p>
+        </div>
     </div>
 
     <script src="static/script.js"></script>
