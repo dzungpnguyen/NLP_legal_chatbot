@@ -17,11 +17,18 @@ var conversations = []; // Stocke les conversations
             });
         }
 
+        function handleKeyPress(event) {
+            console.log(event.key);
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
         function sendMessage() {
             var input = document.getElementById('userInput');
             var chatbox = document.getElementById('chatbox');
             var selectedConversation = document.getElementById('conversationSelect').value;
-            var message = 'User: ' + input.value;
+            var message = input.value;
             console.log(message);
             fetch('/chat', {
                 method: 'POST',
@@ -36,9 +43,9 @@ var conversations = []; // Stocke les conversations
             .then(data => {
                 console.log('Success:', data);
                 console.log(typeof data)
-                var botMessage = 'Bot: ' + data.response;
-                chatbox.innerHTML += message + '<br>';
-                chatbox.innerHTML += botMessage + '<br>';
+                var botMessage = data.response;
+                chatbox.innerHTML += '<p class="user-message">😎: ' + message + '</p>';
+                chatbox.innerHTML += '<p class="bot-message">🤖: ' + botMessage + '</p>';
                 conversations[selectedConversation].messages.push(message);
                 conversations[selectedConversation].messages.push(botMessage);
             })
@@ -46,6 +53,6 @@ var conversations = []; // Stocke les conversations
                 console.log('Error:', error);
                 console.error('Error:', error);
             });
-            
+            document.getElementById('userInput').value = '';
             
         }
