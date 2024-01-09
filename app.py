@@ -1,5 +1,6 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify,request
 from ml_based_chatbot.MLChatBot import get_response
+
 
 app = Flask(__name__)
 
@@ -11,10 +12,10 @@ def index():
 
 @app.route('/chat', methods=['GET'])
 def chat():
-    input = request.get_json()["text"]
+    input = request.json.get("text")
     if input is None:
         return jsonify({"No text in request"}), 400
-    response = get_response(input_text)
+    response = get_response(input)
     return jsonify({'response': response}), 200
 
 

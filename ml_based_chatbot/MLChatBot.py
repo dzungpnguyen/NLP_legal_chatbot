@@ -5,8 +5,8 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 # logging.basicConfig(filename='warnings.log', level=logging.WARNING)
 
 # Load the tokenizer and model
-tokenizer = AutoTokenizer.from_pretrained('../ml_based_chatbot/saved_model')
-model = AutoModelForSeq2SeqLM.from_pretrained('../ml_based_chatbot/saved_model')
+tokenizer = AutoTokenizer.from_pretrained('ml_based_chatbot/saved_model')
+model = AutoModelForSeq2SeqLM.from_pretrained('ml_based_chatbot/saved_model')
 
 # Choices for welcome messages
 chatbot_welcome_messages = [
@@ -48,6 +48,3 @@ def chatbot():
         chatbot_response = get_response(user_input)
         ref_link = random.choice(reference_links)
         print(f'Bot: {chatbot_response}. Refer to {ref_link} for more information.')
-
-# Run
-chatbot()
