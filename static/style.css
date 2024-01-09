@@ -1,10 +1,6 @@
-#chatbox {
-    width: 300px;
-    height: 400px;
-    border: 1px solid black;
-    padding: 10px;
-    overflow: auto;
-}
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+
 #userInput {
     width: 300px;
 }
@@ -15,19 +11,40 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #F8F4EC;
 }
 #chatbox {
-    width: 300px;
+    width: 600px;
     height: 400px;
-    border: 1px solid black;
     padding: 10px;
-    margin-top: 20px;
     overflow: auto;
 }
 #userInput {
     width: 300px;
     margin-top: 10px;
 }
-.members {
-    margin-top: 20px;
+
+.user-message {
+    color: #333;
+    background-color: #e0e0e0; /* Couleur de fond pour les messages de l'utilisateur */
+    align-self: flex-start; /* Alignement à gauche pour les messages de l'utilisateur */
+}
+
+.bot-message {
+    color: #007bff;
+    background-color: #b3e0ff; /* Couleur de fond pour les messages du bot */
+    align-self: flex-end; /* Alignement à droite pour les messages du bot */
+}
+
+.user-message, .bot-message {
+            max-width: 80%;
+            word-wrap: break-word;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 8px;
+}
+
+#chatbox {
+    display: flex;
+    flex-direction: column;
 }
