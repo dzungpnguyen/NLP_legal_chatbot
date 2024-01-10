@@ -15,9 +15,9 @@ pip install -r requirements.txt
 ```
 
 ### 2. Run Chat Bot
-Go to the folder `ml_based_chatbot`and run `MLChatBot.py` file.
+Run the app.py file.
 ```
-python MLChatBot.py
+python app.py
 ```
 Type `exit` to stop the program.
 
