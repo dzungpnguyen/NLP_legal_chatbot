@@ -13,7 +13,7 @@ body {
     align-items: center;
     background-color: #F8F4EC;
 }
-#chatbox {
+#chat {
     width: 600px;
     height: 400px;
     padding: 10px;
@@ -26,14 +26,14 @@ body {
 
 .user-message {
     color: #333;
-    background-color: #e0e0e0; /* Couleur de fond pour les messages de l'utilisateur */
-    align-self: flex-start; /* Alignement à gauche pour les messages de l'utilisateur */
+    background-color: #e0e0e0;
+    align-self: flex-start;
 }
 
 .bot-message {
     color: #007bff;
-    background-color: #b3e0ff; /* Couleur de fond pour les messages du bot */
-    align-self: flex-end; /* Alignement à droite pour les messages du bot */
+    background-color: #b3e0ff;
+    align-self: flex-end;
 }
 
 .user-message, .bot-message {
