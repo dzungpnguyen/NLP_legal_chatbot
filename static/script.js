@@ -7,6 +7,8 @@ var conversations = []; // Stocke les conversations
             option.value = conversations.length - 1;
             option.text = 'Conversation ' + conversations.length;
             document.getElementById('conversationSelect').add(option);
+            document.getElementById('conversationSelect').value = conversations.length - 1;
+            loadConversation(conversations.length - 1);
         }
 
         function loadConversation(index) {
@@ -18,7 +20,6 @@ var conversations = []; // Stocke les conversations
         }
 
         function handleKeyPress(event) {
-            console.log(event.key);
             if (event.key === 'Enter') {
                 sendMessage();
             }
@@ -26,10 +27,9 @@ var conversations = []; // Stocke les conversations
 
         function sendMessage() {
             var input = document.getElementById('userInput');
+            var message = input.value
             var chatbox = document.getElementById('chatbox');
             var selectedConversation = document.getElementById('conversationSelect').value;
-            var message = input.value;
-            console.log(message);
             fetch('/chat', {
                 method: 'POST',
                 headers: {
@@ -42,10 +42,11 @@ var conversations = []; // Stocke les conversations
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
-                console.log(typeof data)
-                var botMessage = data.response;
-                chatbox.innerHTML += '<p class="user-message">😎: ' + message + '</p>';
-                chatbox.innerHTML += '<p class="bot-message">🤖: ' + botMessage + '</p>';
+                message = '<p class="user-message">😎: ' + message + '</p>';
+                console.log(message)
+                var botMessage = '<p class="bot-message">🤖: ' + data.response + '</p>';
+                chatbox.innerHTML += message;
+                chatbox.innerHTML += botMessage
                 conversations[selectedConversation].messages.push(message);
                 conversations[selectedConversation].messages.push(botMessage);
             })
