@@ -1,5 +1,16 @@
+# Chatbot Legal Assistant
 
-# Usage for ML based chat bot
+## Introduction
+
+Welcome to the Chatbot Legal Assistant! This is a simple chatbot built with Python and Flask, designed to assist users with legal questions. The chatbot uses a pre-trained model to generate responses based on user input.
+
+## Run the Flask app
+```
+python app.py
+```
+The app will start running at http://localhost:5000/ 
+<br><br><br>
+## Usage for ML based chat bot
 
 ### Dataset used: 
 
@@ -23,7 +34,7 @@ Type `exit` to stop the program.
 
 <br><br><br>
 
-# Usage for similarity based chat bot (v2)
+## Usage for similarity based chat bot (v2)
 
 ### Dataset used: 
 
