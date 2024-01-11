@@ -24,7 +24,7 @@ def get_response(input_text):
     # Tokenize input
     input_ids = tokenizer(input_text, return_tensors="pt").input_ids
     # Get output
-    output_ids = model.generate(input_ids, max_length=50, temperature=0.9, do_sample=True)
+    output_ids = model.generate(input_ids, max_length=200, temperature=0.9, do_sample=True)
     # Decode the output
     output_text = tokenizer.decode(output_ids[0], skip_special_tokens=True)
     return output_text
